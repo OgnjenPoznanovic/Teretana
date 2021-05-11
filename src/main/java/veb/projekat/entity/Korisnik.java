@@ -1,14 +1,42 @@
 package veb.projekat.entity;
 
+import java.sql.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Korisnik {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@Column
 	private String korisnicko_ime;
+	
+	@Column
 	private String lozinka;
+	
+	@Column
 	private String ime;
+	
+	@Column
 	private String telefon;
+	
+	@Column
 	private String email;
+	
+	@Column
 	private String uloga;
-	private String rodjendan;
+	
+	@Column	
+	private Date rodjendan;
+	
+	@Column
 	private boolean aktivan;
 	
 	public String getKorisnicko_ime() {
@@ -47,10 +75,11 @@ public class Korisnik {
 	public void setUloga(String uloga) {
 		this.uloga = uloga;
 	}
-	public String getRodjendan() {
+	
+	public Date getRodjendan() {
 		return rodjendan;
 	}
-	public void setRodjendan(String rodjendan) {
+	public void setRodjendan(Date rodjendan) {
 		this.rodjendan = rodjendan;
 	}
 	public boolean isAktivan() {

@@ -3,19 +3,51 @@ package veb.projekat.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Fitness_centar {
 	
-	private String naziv;
-	private String adresa;
-	private String broj_telefona;
-	private String email;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	
+	@Column
+	private String naziv;
+	
+	@Column
+	private String adresa;
+	
+	@Column
+	private String broj_telefona;
+	
+	@Column
+	private String email;
+
+	@OneToMany(mappedBy = "fitness_centar", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<Trener> treneri = new HashSet<>();
 	
+	@OneToMany(mappedBy = "fitness_centar", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<Sala> sale = new HashSet<>();
 	
+	@OneToMany(mappedBy = "fitness_centar", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<Trening> raspored = new HashSet<>();
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
 	public String getNaziv() {
 		return naziv;
 	}
