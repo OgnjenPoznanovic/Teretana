@@ -11,8 +11,11 @@ INSERT INTO TRENING (naziv, opis, vreme, tip, trajanje, cena, prijavljenih, fitn
 
 INSERT INTO LISTA_TRENINGA (sala_id, trening_id) VALUES (1, 1);
 INSERT INTO LISTA_TRENINGA (sala_id, trening_id) VALUES (2, 2);
-INSERT INTO LISTA_TRENINGA (sala_id, trening_id) VALUES (2, 3);
+INSERT INTO LISTA_TRENINGA (sala_id, trening_id) VALUES (1, 3);
 INSERT INTO LISTA_TRENINGA (sala_id, trening_id) VALUES (3, 4);
+
+
+
 
 CREATE TABLE TRENER(
 	id INTEGER	NOT NULL AUTO_INCREMENT,

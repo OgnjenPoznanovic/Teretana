@@ -34,7 +34,8 @@ public class Sala {
 	@ManyToMany
 	@JoinTable(name = "lista_treninga",
 				joinColumns = @JoinColumn(name = "sala_id", referencedColumnName= "id"),
-				inverseJoinColumns = @JoinColumn(name = "trening_id", referencedColumnName = "id"))
+				inverseJoinColumns = @JoinColumn(name = "trening_id", referencedColumnName = "id")
+	)
 	private Set<Trening> treninzi = new HashSet<>();
 
 	public Long getId() {

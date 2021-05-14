@@ -103,7 +103,7 @@ public class Trening {
 	public void setFitness_centar(Fitness_centar fitness_centar) {
 		this.fitness_centar = fitness_centar;
 	}
-	
+
 	
 	
 	
