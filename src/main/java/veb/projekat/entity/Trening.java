@@ -1,6 +1,6 @@
 package veb.projekat.entity;
 
-import java.sql.Date;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,6 +14,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 
+
 @Entity
 public class Trening {
 	
@@ -25,22 +26,11 @@ public class Trening {
 	private String naziv;
 	
 	@Column
-	private Date opis;
-	
-	@Column
-	private String vreme;
-	
-	@Column
 	private String tip;
 	
 	@Column
 	private double trajanje;
 	
-	@Column
-	private double cena;
-	
-	@Column
-	private int prijavljenih;
 	
     @ManyToMany(mappedBy = "treninzi")
     private Set<Sala> sale = new HashSet<>();
@@ -72,31 +62,7 @@ public class Trening {
 	public void setTrajanje(double trajanje) {
 		this.trajanje = trajanje;
 	}
-	public double getCena() {
-		return cena;
-	}
-	public void setCena(double cena) {
-		this.cena = cena;
-	}
-	public int getPrijavljenih() {
-		return prijavljenih;
-	}
-	public void setPrijavljenih(int prijavljenih) {
-		this.prijavljenih = prijavljenih;
-	}
-	public Date getOpis() {
-		return opis;
-	}
-	public void setOpis(Date opis) {
-		this.opis = opis;
-	}
 	
-	public String getVreme() {
-		return vreme;
-	}
-	public void setVreme(String vreme) {
-		this.vreme = vreme;
-	}
 	public Fitness_centar getFitness_centar() {
 		return fitness_centar;
 	}

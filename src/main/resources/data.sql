@@ -4,10 +4,10 @@ INSERT INTO SALA (kapacitet, oznaka, fitness_centar_id) VALUES (50, 'S1', 1);
 INSERT INTO SALA (kapacitet, oznaka, fitness_centar_id) VALUES (35, 'S2', 1);
 INSERT INTO SALA (kapacitet, oznaka, fitness_centar_id) VALUES (20, 'S3', 1);
 
-INSERT INTO TRENING (naziv, opis, vreme, tip, trajanje, cena, prijavljenih, fitness_centar_id) VALUES ('kardio', '2021-05-12', '19h', 'kondicioni',  1.5, 250, 15, 1);
-INSERT INTO TRENING (naziv, opis, vreme, tip, trajanje, cena, prijavljenih, fitness_centar_id) VALUES ('ples', '2021-05-12', '18h', 'tango',  2, 300, 20, 1);
-INSERT INTO TRENING (naziv, opis, vreme, tip, trajanje, cena, prijavljenih, fitness_centar_id) VALUES ('joga', '2021-05-12', '12h', 'tralala',  1, 150, 15, 1);
-INSERT INTO TRENING (naziv, opis, vreme, tip, trajanje, cena, prijavljenih, fitness_centar_id) VALUES ('crossfit', '2021-05-12', '21h', 'kondicioni',  1.5, 350, 10, 1);
+INSERT INTO TRENING (naziv, tip, trajanje, fitness_centar_id) VALUES ('kardio', 'kondicioni', 1.5, 1);
+INSERT INTO TRENING (naziv, tip, trajanje, fitness_centar_id) VALUES ('ples', 'tango',  2, 1);
+INSERT INTO TRENING (naziv, tip, trajanje, fitness_centar_id) VALUES ('joga', 'tralala',  1, 1);
+INSERT INTO TRENING (naziv, tip, trajanje, fitness_centar_id) VALUES ('crossfit', 'kondicioni', 1.5, 1);
 
 INSERT INTO LISTA_TRENINGA (sala_id, trening_id) VALUES (1, 1);
 INSERT INTO LISTA_TRENINGA (sala_id, trening_id) VALUES (2, 2);
@@ -71,3 +71,18 @@ CREATE TABLE ADMINISTRATOR(
 );
 
 INSERT INTO ADMINISTRATOR (korisnicko_ime, lozinka, ime, telefon, email, uloga, rodjendan, aktivan) VALUES ('Nemanja', '1556', 'Nemanja', '0654884121', 'nemanja@gmail.com', 'administrator', '1998-01-05', 1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

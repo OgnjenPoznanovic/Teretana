@@ -3,6 +3,7 @@ package veb.projekat.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Sala {
@@ -31,11 +33,14 @@ public class Sala {
 	private Fitness_centar fitness_centar;
 	
 	
+	@OneToMany(mappedBy = "sale", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private Set<Termin> salaa = new HashSet<>();
+
 	@ManyToMany
 	@JoinTable(name = "lista_treninga",
-				joinColumns = @JoinColumn(name = "sala_id", referencedColumnName= "id"),
-				inverseJoinColumns = @JoinColumn(name = "trening_id", referencedColumnName = "id")
-	)
+			joinColumns = @JoinColumn(name = "sala_id", referencedColumnName= "id"),
+			inverseJoinColumns = @JoinColumn(name = "trening_id", referencedColumnName = "id")
+			)
 	private Set<Trening> treninzi = new HashSet<>();
 
 	public Long getId() {
