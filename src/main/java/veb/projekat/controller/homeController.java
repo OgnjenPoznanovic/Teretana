@@ -11,10 +11,14 @@ public class homeController{
 		return "Login.html";
 	}
 	
-	
 	@GetMapping("/admin")
 	public String admin() {
 		return "Administrator.html";
+	}
+	
+	@GetMapping("/registracija_clana")
+	public String prijavaclana() {
+		return "Registracija_korisnika.html";
 	}
 
 }
