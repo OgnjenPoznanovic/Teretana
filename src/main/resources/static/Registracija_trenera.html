@@ -4,6 +4,10 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="login.css">
 	<title>Registracija za trenera</title>
+	
+	<script src="jquery.min.js"></script>
+    <script src="jquery.validate.min.js"></script>
+	<script src="trener.js"></script>
 </head>
 <body>
 	
@@ -16,26 +20,34 @@
 	<br><br>
 	
 	<div class="logint">
-	<p class="tekst, centriranje">Registacija za trenera</p>
-    <label for="korisnicko_ime" style="margin-left:18%;" class="tekst"><b>Korisničko ime</b></label>
-    <input type="text" placeholder="Korisničko ime" name="korisnicko_ime" required>
-	<br><br>
-    <label for="lozinka" style="margin-left:30%;" class="tekst"><b>Šifra</b></label>
-    <input type="password" placeholder="Unesite šifru" name="lozinka" required>
-	<br><br>
-	<label for="ime" style="margin-left:31%;" class="tekst"><b>Ime</b></label>
-    <input type="text" placeholder="Unesite ime" name="ime" required>
-	<br><br>
-	<label for="telefon" style="margin-left:27%;" class="tekst"><b>Telefon</b></label>
-    <input type="text" placeholder="Unesite telefon" name="telefon" required>
-	<br><br>
-	<label for="email" style="margin-left:29%;" class="tekst"><b>Email</b></label>
-    <input type="email" placeholder="Unesite email" name="email" required>
-	<br><br>
-	<label for="rodjendan" style="margin-left:27%;" class="tekst"><b>Rodjendan</b></label>
-    <input type="date" placeholder="Unesite telefon" name="rodjendan" required>
-	<br><br>
-    <button type="submit" style="margin-left:43%;">Zahtev za registaciju</button>
+		<form id="dodajtrenera">
+		<p class="tekst, centriranje">Registacija</p>
+		
+			<label for="korisnicko_ime" style="margin-left:18%;" class="tekst"><b>Korisničko ime</b></label>
+			<input id="korisnicko_ime" type="text"   required>
+		<br><br>
+			<label for="lozinka" style="margin-left:30%;" class="tekst"><b>Šifra</b></label>
+			<input id="lozinka" type="password"   required>
+		<br><br>
+			<label for="ime" style="margin-left:31%;" class="tekst"><b>Ime</b></label>
+			<input id="ime" type="text"  required>
+		<br><br>
+			<label for="telefon" style="margin-left:27%;" class="tekst"><b>Telefon</b></label>
+			<input id="telefon" type="text"   required>
+		<br><br>
+			<label for="email" style="margin-left:29%;" class="tekst"><b>Email</b></label>
+			<input id="email" type="email"   required>
+		<br><br>
+			<label for="uloga" style="margin-left:58%;" class="tekst"></label>
+			<select id="uloga" type="text">
+				<option value="trener">trener</option>
+			</select>
+		<br><br>
+			<label for="rodjendan" style="margin-left:27%;" class="tekst"><b>Rodjendan</b></label>
+			<input id="rodjendan" type="date" required>
+		<br><br>
+			<input type="submit" value="Registracija">
+	</form>
 
     </div>
 

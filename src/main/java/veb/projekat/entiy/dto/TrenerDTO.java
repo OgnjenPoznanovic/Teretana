@@ -1,55 +1,23 @@
-package veb.projekat.entity;
+package veb.projekat.entiy.dto;
 
 import java.sql.Date;
-import java.util.ArrayList;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-
-@Entity
-public class Trener{
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class TrenerDTO {
+	
 	private Long id;
-	
-	@Column
 	private String korisnicko_ime;
-	
-	@Column
 	private String lozinka;
-	
-	@Column
 	private String ime;
-	
-	@Column
-	private String telefon;
-	
-	@Column
+	private String telefon;	
 	private String email;
-	
-	@Column
 	private String uloga;
-	
-	@Column	
 	private Date rodjendan;
 	
-	@Column
-	private int ocena;
-	
-	@Column
-	private boolean aktivan;
-	
-	@ManyToOne(fetch = FetchType.EAGER)
-	private Fitness_centar fitness_centar;
-	
-	public Trener(String korisnicko_ime, String lozinka, String ime, String telefon, String email,
+	public TrenerDTO() {}
+
+	public TrenerDTO(Long id, String korisnicko_ime, String lozinka, String ime, String telefon, String email,
 			String uloga, Date rodjendan) {
+		this.id = id;
 		this.korisnicko_ime = korisnicko_ime;
 		this.lozinka = lozinka;
 		this.ime = ime;
@@ -58,10 +26,7 @@ public class Trener{
 		this.uloga = uloga;
 		this.rodjendan = rodjendan;
 	}
-	
-	
-	
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -125,40 +90,9 @@ public class Trener{
 	public void setRodjendan(Date rodjendan) {
 		this.rodjendan = rodjendan;
 	}
-
-	public int getOcena() {
-		return ocena;
-	}
-
-	public void setOcena(int ocena) {
-		this.ocena = ocena;
-	}
-
-	public boolean isAktivan() {
-		return aktivan;
-	}
-
-	public void setAktivan(boolean aktivan) {
-		this.aktivan = aktivan;
-	}
-/*
-	public double getProsecnaOcena() {
-		return prosecnaOcena;
-	}
-
-	public void setProsecnaOcena(int prosecnaOcena) {
-		this.prosecnaOcena = prosecnaOcena;
-	}
-*/
-
-
-
-
-
-	
-
-
 	
 	
 	
+	
+
 }

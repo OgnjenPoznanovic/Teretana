@@ -20,5 +20,9 @@ public class homeController{
 	public String prijavaclana() {
 		return "Registracija_korisnika.html";
 	}
-
+	
+	@GetMapping("/trener")
+	public String prijavatrenera() {
+		return "Registracija_trenera.html";
+	}
 }

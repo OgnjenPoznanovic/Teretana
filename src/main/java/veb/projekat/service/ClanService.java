@@ -22,4 +22,24 @@ public class ClanService {
 		
 	}
 	
+	
+	/*
+	public Clan create(Clan clan)throws Exception{
+		
+		String mejl = clan.getEmail();
+		clanRepository.findByEmail(mejl);
+		
+		ClanDTO clanDTO = new ClanDTO();
+		clanDTO.setEmail(clan.getEmail());
+		String mejl2 = clanDTO.getEmail();
+		
+		if(mejl == mejl2) {
+			throw new Exception("Vec imas profil");
+		}
+		
+		Clan newClan = this.clanRepository.save(clan);
+		return newClan;
+		
+	}*/
+	
 }
