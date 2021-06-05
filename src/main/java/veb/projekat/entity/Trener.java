@@ -1,7 +1,7 @@
 package veb.projekat.entity;
 
 import java.sql.Date;
-import java.util.ArrayList;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -43,13 +43,13 @@ public class Trener{
 	private int ocena;
 	
 	@Column
-	private boolean aktivan;
+	private int aktivan;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Fitness_centar fitness_centar;
 	
 	public Trener(String korisnicko_ime, String lozinka, String ime, String telefon, String email,
-			String uloga, Date rodjendan) {
+			String uloga, Date rodjendan, int aktivan) {
 		this.korisnicko_ime = korisnicko_ime;
 		this.lozinka = lozinka;
 		this.ime = ime;
@@ -57,9 +57,10 @@ public class Trener{
 		this.email = email;
 		this.uloga = uloga;
 		this.rodjendan = rodjendan;
+		this.aktivan = aktivan;
 	}
 	
-	
+	public Trener() {}
 	
 	
 	public Long getId() {
@@ -134,13 +135,15 @@ public class Trener{
 		this.ocena = ocena;
 	}
 
-	public boolean isAktivan() {
+	public int getAktivan() {
 		return aktivan;
 	}
 
-	public void setAktivan(boolean aktivan) {
+	public void setAktivan(int aktivan) {
 		this.aktivan = aktivan;
 	}
+
+
 /*
 	public double getProsecnaOcena() {
 		return prosecnaOcena;

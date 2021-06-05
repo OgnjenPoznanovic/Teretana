@@ -7,6 +7,7 @@
 	<script src="jquery.min.js"></script>
     <script src="jquery.validate.min.js"></script>
 	<script src="fitnes.js"></script>
+	<script src="trener.js"></script>
 
 	
 </head>
@@ -16,27 +17,40 @@
     <form id="dodajNoviFitnes">
         <p>
             <label for="naziv">Naziv:</label>
-            <input id="naziv" type="text" /><br>
+            <input id="naziv" type="text" required><br>
         </p>
 		<p>
             <label for="adresa">Adresa:</label>
-            <input id="adresa" type="text" /><br>
+            <input id="adresa" type="text" required><br>
         </p>
         <p>
             <label for="broj_telefona">Broj telefona:</label>
-            <input id="broj_telefona" type="text" /><br>
+            <input id="broj_telefona" type="text" required><br>
         </p>
         <p>
             <label for="email">email:</label>
-            <input id="email" type="email" /><br>
+            <input id="email" type="email" required><br>
         </p>
         <input type="submit" value="Dodaj">
     </form>
 	
 	
 	<br><br>
+	 
+	    <h1>Pregled zahteva za trenera</h1>
 	
-	<a href="pregled_trenera.html">Pregled registacija za trenera</a>
+        <div>
+            <table id="treneri">
+                <tr>
+                    <th>Ime</th>
+                    <th>Email</th>
+                    <th>Aktivnost</th>
+                    <th>Odobravanje</th>
+                </tr>                
+            </table>
+        </div>
+	
+	
 
 </body>
 </html>

@@ -12,11 +12,12 @@ public class TrenerDTO {
 	private String email;
 	private String uloga;
 	private Date rodjendan;
+	private int aktivan;
 	
 	public TrenerDTO() {}
 
 	public TrenerDTO(Long id, String korisnicko_ime, String lozinka, String ime, String telefon, String email,
-			String uloga, Date rodjendan) {
+			String uloga, Date rodjendan, int aktivan) {
 		this.id = id;
 		this.korisnicko_ime = korisnicko_ime;
 		this.lozinka = lozinka;
@@ -25,6 +26,7 @@ public class TrenerDTO {
 		this.email = email;
 		this.uloga = uloga;
 		this.rodjendan = rodjendan;
+		this.aktivan = aktivan;
 	}
 
 	public Long getId() {
@@ -90,6 +92,16 @@ public class TrenerDTO {
 	public void setRodjendan(Date rodjendan) {
 		this.rodjendan = rodjendan;
 	}
+
+	public int getAktivan() {
+		return aktivan;
+	}
+
+	public void setAktivan(int aktivan) {
+		this.aktivan = aktivan;
+	}
+
+
 	
 	
 	
