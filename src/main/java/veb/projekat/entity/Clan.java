@@ -60,6 +60,7 @@ public class Clan{
 		this.email = email;
 		this.uloga = uloga;
 		this.rodjendan = rodjendan;
+		this.aktivan = true;
 	}
 	
 	@OneToMany(mappedBy = "clan2", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)

@@ -70,15 +70,10 @@ public class TrenerController {
 	
 	@PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE,
 			produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<TrenerDTO> dozvoli(@PathVariable Long id, @RequestBody TrenerDTO trenerDTO) throws Exception{
+	public ResponseEntity<TrenerDTO> dozvoli(@PathVariable Long id) throws Exception{
 		
 		
-		Trener trener = new Trener(trenerDTO.getKorisnicko_ime(),
-				trenerDTO.getLozinka(), trenerDTO.getIme(), trenerDTO.getTelefon(), trenerDTO.getEmail(),
-				trenerDTO.getUloga(), trenerDTO.getRodjendan(), trenerDTO.isAktivan());
-		trener.setId(id);
-		
-		Trener odobren_trener = trenerService.odobravanje(trener);
+		Trener odobren_trener = trenerService.odobravanje(id);
 		
 		TrenerDTO odobren_trenerDTO = new TrenerDTO(odobren_trener.getId(), odobren_trener.getKorisnicko_ime(),
 				odobren_trener.getLozinka(), odobren_trener.getIme(), odobren_trener.getTelefon(),

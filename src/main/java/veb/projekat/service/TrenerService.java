@@ -31,13 +31,14 @@ public class TrenerService {
 	}
 	
 	
-	public Trener odobravanje(Trener trener) throws Exception {
-		Trener trener_odobravanje = this.trenerRepository.getOne(trener.getId());
+	public Trener odobravanje(Long id) throws Exception {
+		Trener trener_odobravanje = this.trenerRepository.getOne(id);
 		if(trener_odobravanje == null) {
 			throw new Exception("Ne postoji taj trener");
 		}
 		
 		trener_odobravanje.setAktivan(true);
+		
 		
 		Trener odobren = this.trenerRepository.save(trener_odobravanje);
 		return odobren;

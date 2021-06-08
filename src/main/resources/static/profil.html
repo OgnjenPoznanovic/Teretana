@@ -21,25 +21,40 @@
 				<input type="text" id="kriterijum" name="kriterijum" value="..."><br>
 				<label for="vrednost">Joga/Tango</label>
 				<input type="text" id="vrednost" name="vrednost" value="..."><br>
-				<script>
+			<!--	<script>
 					function preuzmi(){
 					var kriterijum = document.getElementById(kriterijum).value;
 					var vrsta = document.getElementById(vrednost).value;
 					
 					alert("Preuzeo");
 					}
-				</script>
+				</script> -->
 				<input type="submit" value="Pretraži">
 				</form>
-	            <table id="lista_treninga">
-                <tr>
-					<th>Id</th>
-                    <th>Naziv</th>
-                    <th>Tip</th>
-                    <th>Trajanje</th>
-                </tr>                
-				</table>
 				
+				<div id="tablediv">
+					<table id="lista_treninga">
+					<tr>
+						<th>Id</th>
+						<th>Naziv</th>
+						<th>Tip</th>
+						<th>Trajanje</th>
+					</tr>                
+					</table>
+				</div>
+				
+				
+				<div id="sakri" hidden>
+					<table id="rez">
+					<tr>
+						<th>Id</th>
+						<th>Naziv</th>
+						<th>Tip</th>
+						<th>Trajanje</th>
+					</tr>                
+					</table>
+				</div>
+			
 				
 			</div>
 
