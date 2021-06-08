@@ -43,13 +43,13 @@ public class Trener{
 	private int ocena;
 	
 	@Column
-	private int aktivan;
+	private boolean aktivan;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Fitness_centar fitness_centar;
 	
 	public Trener(String korisnicko_ime, String lozinka, String ime, String telefon, String email,
-			String uloga, Date rodjendan, int aktivan) {
+			String uloga, Date rodjendan, boolean aktivan) {
 		this.korisnicko_ime = korisnicko_ime;
 		this.lozinka = lozinka;
 		this.ime = ime;
@@ -135,6 +135,16 @@ public class Trener{
 		this.ocena = ocena;
 	}
 
+	public boolean isAktivan() {
+		return aktivan;
+	}
+
+	public void setAktivan(boolean aktivan) {
+		this.aktivan = aktivan;
+	}
+	
+	
+/*
 	public int getAktivan() {
 		return aktivan;
 	}
@@ -143,7 +153,7 @@ public class Trener{
 		this.aktivan = aktivan;
 	}
 
-
+*/
 /*
 	public double getProsecnaOcena() {
 		return prosecnaOcena;

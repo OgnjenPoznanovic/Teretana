@@ -26,7 +26,7 @@ $(document).on("submit", "#dodajNoviFitnes", function (event) {       // kada je
             console.log(response);                                  
 
             alert("Fitnes: " + response.id + " je uspešno kreiran!");
-            window.location.href = "login.html";                
+          //  window.location.href = "login.html";                
         },
         error: function () {                                       
             alert("Greška!");

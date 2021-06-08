@@ -47,6 +47,8 @@ public class Fitness_centar {
 		this.broj_telefona = broj_telefona;
 		this.email = email;
 	}
+	
+	public Fitness_centar() {}
 
 	public Long getId() {
 		return id;

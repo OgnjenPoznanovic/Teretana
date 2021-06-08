@@ -16,6 +16,11 @@ public class homeController{
 		return "Administrator.html";
 	}
 	
+	@GetMapping("/profil")
+	public String treneri() {
+		return "profil.html";
+	}
+	/*
 	@GetMapping("/pregled")
 	public String treneri() {
 		return "pregled_trenera.html";
@@ -30,5 +35,5 @@ public class homeController{
 	@GetMapping("/trener")
 	public String prijavatrenera() {
 		return "Registracija_trenera.html";
-	}
+	}*/
 }

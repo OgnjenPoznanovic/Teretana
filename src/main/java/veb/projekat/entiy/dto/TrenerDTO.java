@@ -12,12 +12,12 @@ public class TrenerDTO {
 	private String email;
 	private String uloga;
 	private Date rodjendan;
-	private int aktivan;
+	private boolean aktivan;
 	
 	public TrenerDTO() {}
 
 	public TrenerDTO(Long id, String korisnicko_ime, String lozinka, String ime, String telefon, String email,
-			String uloga, Date rodjendan, int aktivan) {
+			String uloga, Date rodjendan, boolean aktivan) {
 		this.id = id;
 		this.korisnicko_ime = korisnicko_ime;
 		this.lozinka = lozinka;
@@ -93,6 +93,16 @@ public class TrenerDTO {
 		this.rodjendan = rodjendan;
 	}
 
+	public boolean isAktivan() {
+		return aktivan;
+	}
+
+	public void setAktivan(boolean aktivan) {
+		this.aktivan = aktivan;
+	}
+	
+	
+/*
 	public int getAktivan() {
 		return aktivan;
 	}
@@ -102,7 +112,7 @@ public class TrenerDTO {
 	}
 
 
-	
+	*/
 	
 	
 	

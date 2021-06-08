@@ -29,10 +29,17 @@ public class Trening {
 	private String tip;
 	
 	@Column
-	private double trajanje;
+	private double trajanje;	
 	
-	
-    @ManyToMany(mappedBy = "treninzi")
+    public Trening(String naziv, String tip, double trajanje) {
+		this.naziv = naziv;
+		this.tip = tip;
+		this.trajanje = trajanje;
+	}
+    
+    public Trening() {}
+    
+	@ManyToMany(mappedBy = "treninzi")
     private Set<Sala> sale = new HashSet<>();
 	
 	@ManyToOne(fetch = FetchType.EAGER)
