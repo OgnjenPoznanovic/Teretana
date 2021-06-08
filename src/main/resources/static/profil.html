@@ -11,10 +11,26 @@
 
 </head>
 
+
 <body>
     <h1>Prikaz treninga</h1>
 	
 			 <div>
+				<form id="pretraga">
+				<label for="kriterijum">Naziv/Tip/Trajanje</label>
+				<input type="text" id="kriterijum" name="kriterijum" value="..."><br>
+				<label for="vrednost">Joga/Tango</label>
+				<input type="text" id="vrednost" name="vrednost" value="..."><br>
+				<script>
+					function preuzmi(){
+					var kriterijum = document.getElementById(kriterijum).value;
+					var vrsta = document.getElementById(vrednost).value;
+					
+					alert("Preuzeo");
+					}
+				</script>
+				<input type="submit" value="Pretraži">
+				</form>
 	            <table id="lista_treninga">
                 <tr>
 					<th>Id</th>
@@ -23,6 +39,8 @@
                     <th>Trajanje</th>
                 </tr>                
 				</table>
+				
+				
 			</div>
 
 </body>

@@ -24,3 +24,36 @@ $(document).ready(function () {    // Čeka se trenutak kada je DOM(Document Obj
         }
     });
 });
+
+
+$(document).on("submit", "#pretraga", function (event) {     // kada je submit-ovana forma za kreiranje novog zaposlenog
+    event.preventDefault(); 
+/*
+	var kriterijum = document.getElementById(kriterijum).value;
+	var vrsta = document.getElementById(vrednost).value;
+    */
+    // ajax poziv za kreiranje novog zaposlenog na backend-u
+    $.ajax({
+        type: "GET",                                               // HTTP metoda je POST
+        url: "http://localhost:8080/trener/" + kriterijum + "/" + vrsta,                 // URL na koji se šalju podaci
+        dataType: "json",                                           // tip povratne vrednosti
+        contentType: "application/json",                            // tip podataka koje šaljemo                 
+        success: function (response) {                              // ova f-ja se izvršava posle uspešnog zahteva
+            console.log(response);                                  // ispisujemo u konzoli povratnu vrednost radi provere
+             
+			for (let trening of response) {                        // prolazimo kroz listu svih zaposlenih
+                let row = "<tr>";                                   // kreiramo red za tabelu
+				row += "<td>" + trening.id + "</td>";       // ubacujemo podatke jednog zaposlenog u polja
+                row += "<td>" + trening.naziv + "</td>";
+                row += "<td>" + trening.tip + "</td>";
+				row += "<td>" + trening.trajanje + "</td>";                              
+                row += "</tr>";                                     
+
+                $('#lista_treninga').append(row);                       
+            }
+        },
+        error: function () {                                        // ova f-ja se izvršava posle neuspešnog zahteva
+            alert("Greška!");
+        }
+    });
+});
