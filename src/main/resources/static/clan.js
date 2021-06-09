@@ -36,7 +36,7 @@ $(document).on("submit", "#dodajclana", function (event) {     // kada je submit
             window.location.href = "login.html";                // redirektujemo ga na employees.html stranicu
         },
         error: function () {                                        // ova f-ja se izvršava posle neuspešnog zahteva
-            alert("Greška!");
+            alert("Ovaj mejl se vec koristi");
         }
     });
 });

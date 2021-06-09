@@ -12,16 +12,18 @@ public class ClanService {
 	@Autowired
 	private ClanRepository clanRepository;
 	
+	
 	public Clan create(Clan clan)throws Exception{
-		if(clan.getId() != null) {
-			throw new Exception("ID mora biti nula");
+		String mejl=clan.getEmail();
+		
+		if(this.clanRepository.findByEmail(mejl) != null) {
+			throw new Exception("Ovaj mejl se vec koristi");
 		}
 		
 		Clan newClan = this.clanRepository.save(clan);
 		return newClan;
 		
 	}
-	
 	
 	/*
 	public Clan create(Clan clan)throws Exception{
