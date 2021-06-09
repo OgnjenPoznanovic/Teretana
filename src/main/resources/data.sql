@@ -41,9 +41,10 @@ CREATE TABLE ADMINISTRATOR(
 
 INSERT INTO ADMINISTRATOR (korisnicko_ime, lozinka, ime, telefon, email, uloga, rodjendan, aktivan) VALUES ('Nemanja', '1556', 'Nemanja', '0654884121', 'nemanja@gmail.com', 'administrator', '1998-01-05', 1);
 
-
-
-
+INSERT INTO TERMIN(vreme, cena, prijavljenih, sale_id, trening_id) VALUES ('2021-06-09', 750, 15, 1, 1);
+INSERT INTO TERMIN(vreme, cena, prijavljenih, sale_id, trening_id) VALUES ('2021-06-09', 600, 10, 2, 3);
+INSERT INTO TERMIN(vreme, cena, prijavljenih, sale_id, trening_id) VALUES ('2021-06-11', 500, 20, 3, 2);
+INSERT INTO TERMIN(vreme, cena, prijavljenih, sale_id, trening_id) VALUES ('2021-06-10', 1200, 15, 2, 4);
 
 
 

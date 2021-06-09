@@ -47,33 +47,7 @@ $(document).on("submit", "#pretraga", function (event) {     // kada je submit-o
         contentType: "application/json",                            // tip podataka koje šaljemo                 
         success: function (response) {                              // ova f-ja se izvršava posle uspešnog zahteva
             console.log(response);        
-			// ispisujemo u konzoli povratnu vrednost radi provere
-            
-			/*
-			var myobj = document.getElementById("lista_treninga");
-			myobj.remove();
-			
-			var x = document.createElement('table');
-			x.setAttribute("id", "lista_treninga");
-			
-			var id = table.createTHead();
-			var naziv = table.createTHead();
-			var tip = table.createTHead();
-			var trajanje = table.createTHead();
-			
-			var row = document.createElement('tr');
-			
-			row.appendChild(id);
-			row.appendChild(naziv);
-			row.appendChild(tip);
-			row.appendChild(trajanje);
-			
-			x.appendChild(row);
-		
-			var tablediv = document.getElementById("tablediv");
-			
-			tablediv.appendChild(x);
-			*/
+
 			
 			for (let trening of response) {                        // prolazimo kroz listu svih zaposlenih
                 let row = "<tr>";                                   // kreiramo red za tabelu

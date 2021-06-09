@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Home Page</title>
+    <meta charset="utf-8" />
+	
+	<script src="jquery.min.js"></script>
+    <script src="jquery.validate.min.js"></script>
+	<script src="termin.js"></script>
+
+	
+</head>
+
+<body>
+    <h1>Termini</h1>
+
+	    <div>
+			
+			<form id="uslov">
+			
+				<label for="sort"></label>
+				<select id="sort" type="text">
+					<option value="cenao">cena opadajuca</option>
+					<option value="cenar">cena rastuca</option>
+				</select>
+				<br>
+				<input type="submit" value="Sortiraj">
+			</form>
+			
+			<div id="prva">
+            <table id="termini">
+                <tr>
+                    <th>Id</th>
+                    <th>Vreme</th>
+                    <th>Cena</th>
+                    <th>Prijavljeni</th>
+                </tr>                
+            </table>
+			</div>
+			
+			<div id="druga" hidden>
+			<table id="tabelasort">
+                <tr>
+                    <th>Id</th>
+                    <th>Vreme</th>
+                    <th>Cena</th>
+                    <th>Prijavljeni</th>
+                </tr>                
+            </table>
+			</div>
+			
+			
+			
+			
+			
+        </div>
+
+</body>
+
+</html>

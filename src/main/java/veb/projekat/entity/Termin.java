@@ -41,6 +41,9 @@ public class Termin {
 	@ManyToOne(fetch = FetchType.EAGER)
     private Sala sale;
 	
+	@ManyToOne(fetch = FetchType.EAGER)
+	private Trening trening;
+	
 	public Long getId() {
 		return id;
 	}
@@ -72,5 +75,22 @@ public class Termin {
 	public void setPrijavljenih(int prijavljenih) {
 		this.prijavljenih = prijavljenih;
 	}
+
+	public Sala getSale() {
+		return sale;
+	}
+
+	public void setSale(Sala sale) {
+		this.sale = sale;
+	}
+
+	public Trening getTrening() {
+		return trening;
+	}
+
+	public void setTrening(Trening trening) {
+		this.trening = trening;
+	}
+	
 	
 }
