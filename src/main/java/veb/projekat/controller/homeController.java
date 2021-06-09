@@ -11,8 +11,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class homeController{
 	
 
-	@GetMapping("/")
-	public String welcome() {
+	@GetMapping("/login")
+	public String prijava() {
+		return "Login.html";
+	}
+	
+	@GetMapping("/logout")
+	public String odjava() {
 		return "Login.html";
 	}
 	

@@ -50,6 +50,12 @@ public class Clan{
 	@Column
 	private boolean aktivan;
 	
+	public Clan() {}
+	
+	public Clan(String korisnicko_ime, String lozinka) {
+		this.korisnicko_ime = korisnicko_ime;
+		this.lozinka = lozinka;
+	}
 	
 	public Clan(String korisnicko_ime, String lozinka, String ime, String telefon, String email,
 			String uloga, Date rodjendan) {

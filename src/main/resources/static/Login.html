@@ -3,6 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="login.css">
+	
+	<script src="jquery.min.js"></script>
+    <script src="jquery.validate.min.js"></script>
+	<script src="login.js"></script>
+	
 	<title>Početna</title>
 </head>
 <body>
@@ -15,17 +20,18 @@
 	
 	<br><br>
 
+<form id="prijava">
 	<div class="login">
 	<p class="tekst, centriranje">Prijava</p>
-    <label for="name" style="margin-left:18%;" class="tekst"><b>Korisničko ime</b></label>
-    <input type="text" placeholder="Unesite ime" name="name" required>
+    <label for="korisnicko_ime" style="margin-left:18%;" class="tekst"><b>Korisničko ime</b></label>
+    <input type="text" placeholder="korisnicko_ime" name="korisnicko_ime" id="korisnicko_ime" required>
 	<br><br>
-    <label for="psw" style="margin-left:30%; color:white;" class="tekst"><b>Šifra</b></label>
-    <input type="password" placeholder="Unesite šifru" name="psw" required>
+    <label for="lozinka" style="margin-left:30%; color:white;" class="tekst"><b>Šifra</b></label>
+    <input type="password" placeholder="šifra" name="lozinka" id="lozinka"required>
 	<br><br>
     <button type="submit" style="margin-left:60%;">Login</button>
-
     </div>
+  </form>
 
 
 </body>
