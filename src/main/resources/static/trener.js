@@ -15,7 +15,10 @@ $(document).ready(function () {    // Čeka se trenutak kada je DOM(Document Obj
                 row += "<td>" + trener.aktivan + "</td>";
                 
                 let btn = "<button class='btnSeeMore' data-id=" + trener.id + ">Odobri</button>";
-                row += "<td>" + btn + "</td>";                    
+                row += "<td>" + btn + "</td>";
+				let bri = "<button class='briSeeMore' data-id=" + trener.id + ">Brisanje</button>";
+                row += "<td>" + bri + "</td>";
+				
                 row += "</tr>";                                     
 
                 $('#treneri').append(row);                       
@@ -96,7 +99,27 @@ $(document).on('click', '.btnSeeMore', function() {
 	});
 });
 	
-
+	
+$(document).on('click', '.briSeeMore', function() {
+	//response.preventDefault();
+	
+	let trenerId = this.dataset.id;
+	
+	$.ajax({
+		type: "DELETE",
+		url: "http://localhost:8080/trener/" + trenerId,
+		contentType: "application/json",
+		success: function(response){
+			console.log("SUCCESS:\n", response);
+			
+			window.location.href = "administrator.html";                
+			
+		},
+		error: function(response){
+			console.log("ERROR:\n", response);
+		}
+	});
+});
 
 
 

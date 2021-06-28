@@ -29,9 +29,12 @@ public class Sala {
 	@Column
 	private String oznaka;
 	
+	@Column
+	private int fitnessid;
+	/*
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Fitness_centar fitness_centar;
-	
+	*/
 	
 	@OneToMany(mappedBy = "sale", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Set<Termin> salaa = new HashSet<>();
@@ -42,7 +45,16 @@ public class Sala {
 			inverseJoinColumns = @JoinColumn(name = "trening_id", referencedColumnName = "id")
 			)
 	private Set<Trening> treninzi = new HashSet<>();
-
+	
+	public Sala(int kapacitet, String oznaka, int fitnessid) {
+		this.kapacitet= kapacitet;
+		this.oznaka = oznaka;
+		this.fitnessid = fitnessid;	
+	}
+	
+	public Sala() {}
+	
+	
 	public Long getId() {
 		return id;
 	}
@@ -67,13 +79,15 @@ public class Sala {
 		this.oznaka = oznaka;
 	}
 
-	public Fitness_centar getFitness_centar() {
-		return fitness_centar;
+	public int getFitnessid() {
+		return fitnessid;
 	}
 
-	public void setFitness_centar(Fitness_centar fitness_centar) {
-		this.fitness_centar = fitness_centar;
+	public void setFitnessid(int fitnessid) {
+		this.fitnessid = fitnessid;
 	}
+
+
 
 	
 	

@@ -46,4 +46,21 @@ public class TrenerService {
 	}
 	
 	
+	public void delete(Long id) {
+		this.trenerRepository.deleteById(id);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

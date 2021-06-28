@@ -1,8 +1,8 @@
 INSERT INTO FITNESS_CENTAR (naziv, adresa, broj_telefona, email) VALUES ('Fit', 'Temerinska 15', '0657784112', 'fitns@gmail.com');
 
-INSERT INTO SALA (kapacitet, oznaka, fitness_centar_id) VALUES (50, 'S1', 1);
-INSERT INTO SALA (kapacitet, oznaka, fitness_centar_id) VALUES (35, 'S2', 1);
-INSERT INTO SALA (kapacitet, oznaka, fitness_centar_id) VALUES (20, 'S3', 1);
+INSERT INTO SALA (kapacitet, oznaka, fitnessid) VALUES (50, 'S1', 1);
+INSERT INTO SALA (kapacitet, oznaka, fitnessid) VALUES (35, 'S2', 1);
+INSERT INTO SALA (kapacitet, oznaka, fitnessid) VALUES (20, 'S3', 1);
 
 INSERT INTO TRENING (naziv, tip, trajanje, fitness_centar_id) VALUES ('kardio', 'kondicioni', 1.5, 1);
 INSERT INTO TRENING (naziv, tip, trajanje, fitness_centar_id) VALUES ('ples', 'tango',  2, 1);

@@ -8,6 +8,7 @@
     <script src="jquery.validate.min.js"></script>
 	<script src="fitnes.js"></script>
 	<script src="trener.js"></script>
+	<script src="sala.js"></script>
 
 	
 </head>
@@ -34,6 +35,32 @@
         <input type="submit" value="Dodaj">
     </form>
 	
+	<br><br>
+	
+	<a href="pregled_fitnescentara.html">Pregled Fitnes centara</a>
+	
+	<br><br>
+	
+	<h1>Dodavanje Sale</h1>
+	    <form id="dodajNovuSalu">
+        <p>
+            <label for="kapacitet">Kapacitet sale:</label>
+            <input id="kapacitet" type="number" required><br>
+        </p>
+		<p>
+            <label for="oznaka">Oznaka:</label>
+            <input id="oznaka" type="text" required><br>
+        </p>
+        <p>
+            <label for="fitnessid">Fitnes centar id:</label>
+            <input id="fitnessid" type="number" required><br>
+        </p>
+        <input type="submit" value="Dodaj">
+    </form>
+	<br><br>
+	
+	<a href="pregled_sala.html">Pregled Sala</a>
+	
 	
 	<br><br>
 	 
@@ -46,6 +73,7 @@
                     <th>Email</th>
                     <th>Aktivnost</th>
                     <th>Odobravanje</th>
+					<th>Brisanje</th>
                 </tr>                
             </table>
         </div>

@@ -1,32 +1,30 @@
 // Kreiranje novog zaposlenog
-$(document).on("submit", "#dodajNoviFitnes", function (event) {       // kada je submit-ovana forma za kreiranje novog zaposlenog
+$(document).on("submit", "#dodajNovuSalu", function (event) {       // kada je submit-ovana forma za kreiranje novog zaposlenog
     event.preventDefault();                                         // sprečavamo automatsko slanje zahteva da bismo pokupili (i validirali) podatke iz forme
 
-    let naziv = $("#naziv").val();
-	let adresa = $("#adresa").val();
-    let broj_telefona = $("#broj_telefona").val();
-    let email = $("#email").val();
+    let kapacitet = $("#kapacitet").val();
+	let oznaka = $("#oznaka").val();
+    let fitnessid = $("#fitnessid").val();
 
 
-    let newFitness = {
-        naziv,
-		adresa,
-        broj_telefona,
-        email    
+    let newSala = {
+        kapacitet,
+		oznaka,
+        fitnessid
     }
     
 
     $.ajax({
         type: "POST",                                               
-        url: "http://localhost:8080/admin",                
+        url: "http://localhost:8080/sala",                
         dataType: "json",                                           
         contentType: "application/json",                            
-        data: JSON.stringify(newFitness),                          
+        data: JSON.stringify(newSala),                          
         success: function (response) {                              
             console.log(response);                                  
 
-            alert("Fitnes: " + response.id + " je uspešno kreiran!");
-          //  window.location.href = "login.html";                
+            alert("Sala: " + response.id + " je uspešno kreirana!");
+            window.location.href = "administrator.html";                
         },
         error: function () {                                       
             alert("Greška!");
@@ -35,30 +33,28 @@ $(document).on("submit", "#dodajNoviFitnes", function (event) {       // kada je
 });
 
 
-
 $(document).ready(function () {    // Čeka se trenutak kada je DOM(Document Object Model) učitan da bi JS mogao sa njim da manipuliše.
     // ajax poziv za dobavljanje svih zaposlenih sa backend-a i prikaz u tabeli
     $.ajax({
         type: "GET",                                                // HTTP metoda
-        url: "http://localhost:8080/admin",                 // URL koji se gađa
+        url: "http://localhost:8080/sala",                 // URL koji se gađa
         dataType: "json",                                           // tip povratne vrednosti
         contentType: "application/json", 
 		success: function (response) {                              // ova f-ja se izvršava posle uspešnog zahteva
             console.log("SUCCESS:\n", response);                    // ispisujemo u konzoli povratnu vrednost radi provere
  
-			for (let centar of response) {                        // prolazimo kroz listu svih zaposlenih
+			for (let sale of response) {                        // prolazimo kroz listu svih zaposlenih
                 let row = "<tr>";                                   // kreiramo red za tabelu
-				row += "<td>" + centar.naziv + "</td>";       // ubacujemo podatke jednog zaposlenog u polja
-                row += "<td>" + centar.adresa + "</td>";
-                row += "<td>" + centar.broj_telefona + "</td>";
-				row += "<td>" + centar.email + "</td>";
+				row += "<td>" + sale.kapacitet + "</td>";       // ubacujemo podatke jednog zaposlenog u polja
+                row += "<td>" + sale.oznaka + "</td>";
+                row += "<td>" + sale.fitnessid + "</td>";
 				
-				let bri = "<button class='briSeeMore' data-id=" + centar.id + ">Brisanje</button>";
+				let bri = "<button class='briSeeMore' data-id=" + sale.id + ">Brisanje</button>";
                 row += "<td>" + bri + "</td>";
 				
                 row += "</tr>";                                     
 
-                $('#fitne_centri').append(row);                       
+                $('#sale').append(row);                       
             }
         },
         error: function (response) {                               
@@ -68,7 +64,6 @@ $(document).ready(function () {    // Čeka se trenutak kada je DOM(Document Obj
 });
 
 
-
 $(document).on('click', '.briSeeMore', function() {
 	//response.preventDefault();
 	
@@ -76,12 +71,12 @@ $(document).on('click', '.briSeeMore', function() {
 	
 	$.ajax({
 		type: "DELETE",
-		url: "http://localhost:8080/admin/" + trenerId,
+		url: "http://localhost:8080/sala/" + trenerId,
 		contentType: "application/json",
 		success: function(response){
 			console.log("SUCCESS:\n", response);
 			
-			window.location.href = "pregled_fitnescentara.html";                
+			window.location.href = "pregled_sala.html";                
 			
 		},
 		error: function(response){
@@ -89,6 +84,7 @@ $(document).on('click', '.briSeeMore', function() {
 		}
 	});
 });
+
 
 
 

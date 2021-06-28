@@ -34,10 +34,10 @@ public class Fitness_centar {
 
 	@OneToMany(mappedBy = "fitness_centar", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<Trener> treneri = new HashSet<>();
-	
+	/*
 	@OneToMany(mappedBy = "fitness_centar", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<Sala> sale = new HashSet<>();
-	
+	*/
 	@OneToMany(mappedBy = "fitness_centar", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<Trening> raspored = new HashSet<>();
 	
@@ -97,7 +97,7 @@ public class Fitness_centar {
 	public void setTreneri(Set<Trener> treneri) {
 		this.treneri = treneri;
 	}
-
+/*
 	public Set<Sala> getSale() {
 		return sale;
 	}
@@ -105,7 +105,7 @@ public class Fitness_centar {
 	public void setSale(Set<Sala> sale) {
 		this.sale = sale;
 	}
-
+*/
 	public Set<Trening> getRaspored() {
 		return raspored;
 	}
