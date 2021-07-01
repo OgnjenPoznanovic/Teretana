@@ -29,5 +29,28 @@ public class TerminService {
 		return sortPoCeni;
 	}
 	
+	public List<Termin> findAllByOrderByVremeAsc(){
+		List<Termin> sortVreme = this.terminRepository.findAllByOrderByVremeAsc();
+		return sortVreme;	
+	}
+	
+	public List<Termin> findAllByOrderByVremeDesc(){
+		List<Termin> sortVreme = this.terminRepository.findAllByOrderByVremeDesc();
+		return sortVreme;	
+	}
+	
+	public Termin create(Termin termin)throws Exception{
+	if(termin.getId() != null) {
+		throw new Exception("ID mora biti nula");
+	}
+		Termin newTermin = this.terminRepository.save(termin);
+		return newTermin;
+	}
+	
+	
+	
+	
+	
+	
 	
 }

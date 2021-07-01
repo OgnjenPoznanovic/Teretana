@@ -16,6 +16,12 @@ public class homeController{
 		return "Login.html";
 	}
 	
+	@GetMapping("/trener")
+	public String trener() {
+		return "ProfilTrener.html";
+	}
+	
+	
 	@GetMapping("/logout")
 	public String odjava() {
 		return "Login.html";

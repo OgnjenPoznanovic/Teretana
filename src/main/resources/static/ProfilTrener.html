@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	
+	<script src="jquery.min.js"></script>
+    <script src="jquery.validate.min.js"></script>
+	<script src="termin-trener.js"></script>
+	
+	<title>Trener</title>
+</head>
+<body>
+
+	<h1>Dodavanje novog termuina</h1>
+    <form id="dodajnovitermin">
+        <p>
+            <label for="vreme">Vreme:</label>
+            <input id="vreme" type="text" required><br>
+        </p>
+		<p>
+            <label for="cena">Cena:</label>
+            <input id="cena" type="number" required><br>
+        </p>
+        <p>
+            <label for="prijavljenih">Prijavljenih:</label>
+            <input id="prijavljenih" type="number" required><br>
+        </p>
+        <input type="submit" value="Dodaj">
+    </form>
+
+
+</body>
+</html>

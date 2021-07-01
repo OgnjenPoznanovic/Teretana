@@ -11,4 +11,8 @@ public interface TerminRepository extends JpaRepository<Termin, Long>{
 	List<Termin> findAllByOrderByCenaAsc();
 	
 	List<Termin> findAllByOrderByCenaDesc();
+	
+	List<Termin> findAllByOrderByVremeDesc();
+	
+	List<Termin> findAllByOrderByVremeAsc();
 }

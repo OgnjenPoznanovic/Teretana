@@ -9,6 +9,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -74,6 +76,36 @@ public class TerminController {
 			
 			return new ResponseEntity<>(terminiDTOS, HttpStatus.OK);
 		}
+		else if(cena.contentEquals("vremeo")) {
+			List<Termin> terminList = this.terminService.findAllByOrderByVremeDesc();
+			
+			List<TerminDTO> terminiDTOS = new ArrayList<>();
+			
+			for(Termin termin: terminList) {
+				
+				TerminDTO terminDTO = new TerminDTO( termin.getId(), termin.getVreme(),
+						termin.getCena(), termin.getPrijavljenih());
+				
+				terminiDTOS.add(terminDTO);
+			}
+			
+			return new ResponseEntity<>(terminiDTOS, HttpStatus.OK);
+		}
+		else if(cena.contentEquals("vremer")) {
+			List<Termin> terminList = this.terminService.findAllByOrderByVremeAsc();
+			
+			List<TerminDTO> terminiDTOS = new ArrayList<>();
+			
+			for(Termin termin: terminList) {
+				
+				TerminDTO terminDTO = new TerminDTO( termin.getId(), termin.getVreme(),
+						termin.getCena(), termin.getPrijavljenih());
+				
+				terminiDTOS.add(terminDTO);
+			}
+			
+			return new ResponseEntity<>(terminiDTOS, HttpStatus.OK);
+		}
 		else {
 			List<Termin> terminList = this.terminService.findAllByOrderByCenaDesc();
 			
@@ -92,6 +124,20 @@ public class TerminController {
 		}
 	}
 	
+	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE, value= "/novi")
+	public ResponseEntity<TerminDTO> createTermin(@RequestBody TerminDTO terminDTO) throws Exception{
+		
+		Termin termin = new Termin(terminDTO.getVreme(), terminDTO.getCena(),
+				terminDTO.getPrijavljenih());
+		
+		Termin newTermin = this.terminService.create(termin);
+		
+		TerminDTO newTerminDTO = new TerminDTO(newTermin.getId(), newTermin.getVreme(), 
+				newTermin.getCena(), newTermin.getPrijavljenih());
+		
+		return new ResponseEntity<>(newTerminDTO, HttpStatus.CREATED); 
+	}
 	
 	
 	

@@ -8,7 +8,6 @@ public class TerminDTO {
 	private double cena;
 	private int prijavljenih;
 
-	
 	public TerminDTO() {}
 
 
@@ -47,5 +46,7 @@ public class TerminDTO {
 		this.prijavljenih = prijavljenih;
 	}
 
+
+	
 	
 }

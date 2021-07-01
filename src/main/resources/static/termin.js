@@ -64,3 +64,7 @@ $(document).on("submit", "#uslov", function (event) {
         }
     });
 });
+
+
+
+

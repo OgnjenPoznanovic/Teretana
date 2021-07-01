@@ -44,6 +44,15 @@ public class Termin {
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Trening trening;
 	
+	public Termin(String vreme, double cena, int prijavljenih) {
+		this.vreme = vreme;
+		this.cena = cena;
+		this.prijavljenih = prijavljenih;
+	}
+	
+	public Termin() {}
+	
+	
 	public Long getId() {
 		return id;
 	}
