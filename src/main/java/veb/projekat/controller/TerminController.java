@@ -139,8 +139,80 @@ public class TerminController {
 		return new ResponseEntity<>(newTerminDTO, HttpStatus.CREATED); 
 	}
 	
-	
-	
+	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE, value = "/{vreme}/{cena}")
+	public ResponseEntity<List<TerminDTO>> getCVpretraga(@PathVariable String vreme, @PathVariable double cena){
+		
+		System.out.println(vreme);
+		System.out.println(cena);
+		String provera = "prazno";
+		
+		if(vreme.equalsIgnoreCase(provera)) {
+			if(cena == 0) {
+				
+			}else {
+				List<Termin> terminList = this.terminService.getTerminByCeni(cena);
+				
+				List<TerminDTO> terminiDTOS = new ArrayList<>();
+				
+				for(Termin termin: terminList) {
+					
+					TerminDTO terminDTO = new TerminDTO( termin.getId(), termin.getVreme(),
+							termin.getCena(), termin.getPrijavljenih());
+					
+					terminiDTOS.add(terminDTO);
+				}
+				
+				return new ResponseEntity<>(terminiDTOS, HttpStatus.OK);
+			}
+			
+		}else {
+			if(cena == 0) {
+				List<Termin> terminList = this.terminService.getTerminByVreme(vreme);
+				
+				List<TerminDTO> terminiDTOS = new ArrayList<>();
+				
+				for(Termin termin: terminList) {
+					
+					TerminDTO terminDTO = new TerminDTO( termin.getId(), termin.getVreme(),
+							termin.getCena(), termin.getPrijavljenih());
+					
+					terminiDTOS.add(terminDTO);
+				}
+				
+				return new ResponseEntity<>(terminiDTOS, HttpStatus.OK);
+			}else {
+				List<Termin> terminList = this.terminService.getTerminByVremeAndCena(vreme, cena);
+				
+				List<TerminDTO> terminiDTOS = new ArrayList<>();
+				
+				for(Termin termin: terminList) {
+					
+					TerminDTO terminDTO = new TerminDTO( termin.getId(), termin.getVreme(),
+							termin.getCena(), termin.getPrijavljenih());
+					
+					terminiDTOS.add(terminDTO);
+				}
+				
+				return new ResponseEntity<>(terminiDTOS, HttpStatus.OK);
+				
+			}
+		}
+		
+		List<Termin> terminList = this.terminService.findAll();
+		
+		List<TerminDTO> terminiDTOS = new ArrayList<>();
+		
+		for(Termin termin: terminList) {
+			
+			TerminDTO terminDTO = new TerminDTO( termin.getId(), termin.getVreme(),
+					termin.getCena(), termin.getPrijavljenih());
+			
+			terminiDTOS.add(terminDTO);
+		}
+		
+		return new ResponseEntity<>(terminiDTOS, HttpStatus.OK);
+		
+	}
 	
 	
 	

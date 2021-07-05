@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -67,6 +68,63 @@ public class SalaController {
 		
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
+	
+	@PutMapping(value = "/{id}/{kapacitet}/{oznaka}", consumes = MediaType.APPLICATION_JSON_VALUE,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<SalaDTO> izmeni(@PathVariable Long id, @PathVariable int kapacitet, @PathVariable String oznaka)throws Exception{
+	
+	if(kapacitet == 0) {
+		if(oznaka.equalsIgnoreCase("prazno")) {
+			
+		}else{
+			Sala sala = this.salaService.izmenioznaku(id, oznaka);
+			
+			SalaDTO salaDTO = new SalaDTO(sala.getId(), sala.getKapacitet(),
+					sala.getOznaka(), sala.getFitnessid());
+			
+			return new ResponseEntity<>(salaDTO, HttpStatus.OK);
+		}
+	}else {
+		if(oznaka.equalsIgnoreCase("prazno")) {
+			Sala sala = this.salaService.izmenikapacitet(id, kapacitet);
+			
+			SalaDTO salaDTO = new SalaDTO(sala.getId(), sala.getKapacitet(),
+					sala.getOznaka(), sala.getFitnessid());
+			
+			return new ResponseEntity<>(salaDTO, HttpStatus.OK);
+			
+			
+		}else {
+			Sala sala = this.salaService.izmenikapacitetioznaku(id, kapacitet, oznaka);
+			
+			SalaDTO salaDTO = new SalaDTO(sala.getId(), sala.getKapacitet(),
+					sala.getOznaka(), sala.getFitnessid());
+			
+			return new ResponseEntity<>(salaDTO, HttpStatus.OK);
+		}
+		
+	}
+		Sala sala = this.salaService.izmenikapacitetioznaku(id, kapacitet, oznaka);
+	
+		SalaDTO salaDTO = new SalaDTO(sala.getId(), sala.getKapacitet(),
+			sala.getOznaka(), sala.getFitnessid());
+	
+		return new ResponseEntity<>(salaDTO, HttpStatus.OK);
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

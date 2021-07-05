@@ -45,6 +45,7 @@ $(document).ready(function () {    // Čeka se trenutak kada je DOM(Document Obj
  
 			for (let sale of response) {                        // prolazimo kroz listu svih zaposlenih
                 let row = "<tr>";                                   // kreiramo red za tabelu
+				row += "<td>" + sale.id + "</td>";
 				row += "<td>" + sale.kapacitet + "</td>";       // ubacujemo podatke jednog zaposlenog u polja
                 row += "<td>" + sale.oznaka + "</td>";
                 row += "<td>" + sale.fitnessid + "</td>";
@@ -85,6 +86,29 @@ $(document).on('click', '.briSeeMore', function() {
 	});
 });
 
+$(document).on("submit", "#izmenaSale", function (event) {
+	event.preventDefault(); 
+	
+	let vrednost = $("#id").val();
+	let kriterijum = $("#kapacitet").val();
+	let zamena = $("#oznaka").val();
+	
+	$.ajax({
+		type: "PUT",
+		url: "http://localhost:8080/sala/" + vrednost + "/" + kriterijum + "/" + zamena,
+		contentType: "application/json",
+		success: function(response){
+			console.log("SUCCESS:\n", response);
+			
+			alert("Sala" + response.id + " je izmenjena");
+			window.location.href = "pregled_sala.html";                
+			
+		},
+		error: function(response){
+			console.log("ERROR:\n", response);
+		}
+	});
+});
 
 
 

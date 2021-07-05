@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	
+	<link rel="stylesheet" href="admincss.css">
 	<script src="jquery.min.js"></script>
     <script src="jquery.validate.min.js"></script>
 	<script src="fitnes.js"></script>
@@ -14,16 +14,39 @@
 		<h1>Fitnes centri</h1>
 	
         <div>
-            <table id="fitne_centri">
+            <table class="t1" id="fitne_centri">
                 <tr>
+					<th>Id</th>
                     <th>Naziv</th>
                     <th>Adresa</th>
                     <th>Broj telefona</th>
-                    <th>email</th>
+                    <th>Email</th>
 					<th>Brisanje</th>
                 </tr>                
             </table>
         </div>
+		
+		<form id="izmenaFitnes">
+        <p>
+            <label for="id">Id:</label>
+            <input id="id" type="number" required><br>
+        </p>
+		<p>
+            <label for="kriterijum">Izmena</label>
+
+			<select id="kriterijum">
+			  <option value="naziv">Naziv</option>
+			  <option value="adresa">Adresa</option>
+			  <option value="broj_telefona">Broj telefona</option>
+			  <option value="email">Email</option>
+			</select>
+        </p>
+        <p>
+            <label for="Zamena">Zamena:</label>
+            <input id="zamena" type="text" required><br>
+        </p>
+        <input type="submit" value="Izmeni">
+		</form>
 
 
 </body>

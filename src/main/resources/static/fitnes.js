@@ -48,6 +48,7 @@ $(document).ready(function () {    // Čeka se trenutak kada je DOM(Document Obj
  
 			for (let centar of response) {                        // prolazimo kroz listu svih zaposlenih
                 let row = "<tr>";                                   // kreiramo red za tabelu
+				row += "<td>" + centar.id + "</td>";
 				row += "<td>" + centar.naziv + "</td>";       // ubacujemo podatke jednog zaposlenog u polja
                 row += "<td>" + centar.adresa + "</td>";
                 row += "<td>" + centar.broj_telefona + "</td>";
@@ -81,6 +82,30 @@ $(document).on('click', '.briSeeMore', function() {
 		success: function(response){
 			console.log("SUCCESS:\n", response);
 			
+			window.location.href = "pregled_fitnescentara.html";                
+			
+		},
+		error: function(response){
+			console.log("ERROR:\n", response);
+		}
+	});
+});
+
+$(document).on("submit", "#izmenaFitnes", function (event) {
+	event.preventDefault(); 
+	
+	let vrednost = $("#id").val();
+	let kriterijum = $("#kriterijum").val();
+	let zamena = $("#zamena").val();
+	
+	$.ajax({
+		type: "PUT",
+		url: "http://localhost:8080/admin/" + kriterijum + "/" + vrednost + "/" + zamena,
+		contentType: "application/json",
+		success: function(response){
+			console.log("SUCCESS:\n", response);
+			
+			alert("Fitnes centar" + response.id + " je izmenjen");
 			window.location.href = "pregled_fitnescentara.html";                
 			
 		},

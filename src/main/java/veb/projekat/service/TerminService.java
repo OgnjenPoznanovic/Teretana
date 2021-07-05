@@ -48,6 +48,21 @@ public class TerminService {
 	}
 	
 	
+	public List<Termin> getTerminByVreme(String vreme){	
+		List<Termin> terminPoVremenu = this.terminRepository.findByVreme(vreme);
+		return terminPoVremenu;
+	}
+	
+	public List<Termin> getTerminByCeni(double cena){		
+		List<Termin> terminPoCeni = this.terminRepository.findByCena(cena);
+		return terminPoCeni;
+	}
+	
+	public List<Termin> getTerminByVremeAndCena(String vreme, double cena){		
+		List<Termin> terminPoCV = this.terminRepository.findByVremeAndCena(vreme, cena);
+		return terminPoCV;
+	}
+	
 	
 	
 	

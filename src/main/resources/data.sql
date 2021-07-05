@@ -4,10 +4,14 @@ INSERT INTO SALA (kapacitet, oznaka, fitnessid) VALUES (50, 'S1', 1);
 INSERT INTO SALA (kapacitet, oznaka, fitnessid) VALUES (35, 'S2', 1);
 INSERT INTO SALA (kapacitet, oznaka, fitnessid) VALUES (20, 'S3', 1);
 
-INSERT INTO TRENING (naziv, tip, trajanje, fitness_centar_id) VALUES ('kardio', 'kondicioni', 1.5, 1);
+INSERT INTO TRENING (naziv, tip, trajanje, fitness_centar_id) VALUES ('kardio', 'tralala', 2, 1);
+INSERT INTO TRENING (naziv, tip, trajanje, fitness_centar_id) VALUES ('ples', 'folklor', 2, 1);
+INSERT INTO TRENING (naziv, tip, trajanje, fitness_centar_id) VALUES ('joga', 'opusteno', 1, 1);
+INSERT INTO TRENING (naziv, tip, trajanje, fitness_centar_id) VALUES ('kardio', 'kondicioni', 1, 1);
+INSERT INTO TRENING (naziv, tip, trajanje, fitness_centar_id) VALUES ('ples', 'kondicioni', 2, 1);
 INSERT INTO TRENING (naziv, tip, trajanje, fitness_centar_id) VALUES ('ples', 'tango',  2, 1);
 INSERT INTO TRENING (naziv, tip, trajanje, fitness_centar_id) VALUES ('joga', 'tralala',  1, 1);
-INSERT INTO TRENING (naziv, tip, trajanje, fitness_centar_id) VALUES ('crossfit', 'kondicioni', 1.5, 1);
+INSERT INTO TRENING (naziv, tip, trajanje, fitness_centar_id) VALUES ('crossfit', 'kondicioni', 1, 1);
 
 INSERT INTO LISTA_TRENINGA (sala_id, trening_id) VALUES (1, 1);
 INSERT INTO LISTA_TRENINGA (sala_id, trening_id) VALUES (2, 2);

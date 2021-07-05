@@ -35,7 +35,43 @@ public class SalaService {
 		this.salaRepository.deleteById(id);
 	}
 	
+	public Sala izmenioznaku(Long id, String oznaka)throws Exception{
+		Sala sala = this.salaRepository.getOne(id);
+		if(sala == null) {
+			throw new Exception("Ne postoji ta sala");
+		}
+		
+		sala.setOznaka(oznaka);
+		
+		Sala izmenjen = this.salaRepository.save(sala);
+		return izmenjen;
+	}
 	
+	
+	public Sala izmenikapacitet(Long id, int kapacitet)throws Exception{
+		Sala sala = this.salaRepository.getOne(id);
+		if(sala == null) {
+			throw new Exception("Ne postoji ta sala");
+		}
+		
+		sala.setKapacitet(kapacitet);
+		
+		Sala izmenjen = this.salaRepository.save(sala);
+		return izmenjen;
+	}
+	
+	public Sala izmenikapacitetioznaku(Long id, int kapacitet, String oznaka)throws Exception{
+		Sala sala = this.salaRepository.getOne(id);
+		if(sala == null) {
+			throw new Exception("Ne postoji ta sala");
+		}
+		
+		sala.setKapacitet(kapacitet);
+		sala.setOznaka(oznaka);
+		
+		Sala izmenjen = this.salaRepository.save(sala);
+		return izmenjen;
+	}
 	
 	
 }

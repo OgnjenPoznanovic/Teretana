@@ -39,4 +39,29 @@ public class TreningService {
 		return trenigPoTrajanju;
 	}
 	
+	public List<Trening> getTreningByTipAndTrajanje(String tip, double trajanje){
+		List<Trening> treningPoTipAndTrajanje = this.treningRepository.findByTipAndTrajanje(tip, trajanje);
+		return treningPoTipAndTrajanje;
+	}
+	
+	
+	public List<Trening> getTreningByNazivAndTip(String naziv, String tip){
+		List<Trening> treningPoTipAndTrajanje = this.treningRepository.findByNazivAndTip(naziv, tip);
+		return treningPoTipAndTrajanje;
+	}
+	
+	public List<Trening> getTreningByNazivAndTrajanje(String naziv, double trajanje){
+		List<Trening> treningPoTipAndTrajanje = this.treningRepository.findByNazivAndTrajanje(naziv, trajanje);
+		return treningPoTipAndTrajanje;
+	}
+	
+	public List<Trening> getTreningByNazivAndTipAndTrajanje(String naziv, String tip, double trajanje){
+		System.out.println("Radim Sa Tri");
+		List<Trening> treningPoTipAndTrajanje = this.treningRepository.findByNazivAndTipAndTrajanje(naziv, tip, trajanje);
+		return treningPoTipAndTrajanje;
+	}
+	
+
+	
+	
 }

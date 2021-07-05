@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 //import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -73,6 +74,67 @@ public class Fitness_centarController {
 		
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
+	
+	@PutMapping(value = "/{kriterijum}/{id}/{zamena}", consumes = MediaType.APPLICATION_JSON_VALUE,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Fitness_centarDTO> izmeni(@PathVariable String kriterijum, @PathVariable Long id, @PathVariable String zamena)throws Exception{
+		
+		if(kriterijum.equalsIgnoreCase("naziv")) {
+			Fitness_centar centar = this.fitness_centarService.izmeninaziv(id, zamena);
+			
+			Fitness_centarDTO  centarDTO = new Fitness_centarDTO(
+					centar.getId(), centar.getNaziv(), centar.getAdresa(),
+					centar.getBroj_telefona(), centar.getEmail());
+			
+			return new ResponseEntity<>(centarDTO, HttpStatus.OK);
+		}else
+			if(kriterijum.equalsIgnoreCase("adresa")) {
+				
+				Fitness_centar centar = this.fitness_centarService.izmeniadresa(id, zamena);
+				
+				Fitness_centarDTO  centarDTO = new Fitness_centarDTO(
+						centar.getId(), centar.getNaziv(), centar.getAdresa(),
+						centar.getBroj_telefona(), centar.getEmail());
+				
+				return new ResponseEntity<>(centarDTO, HttpStatus.OK);
+			}else 
+				if(kriterijum.equalsIgnoreCase("broj_telefona")){
+				
+					Fitness_centar centar = this.fitness_centarService.izmenibroj(id, zamena);
+					
+					Fitness_centarDTO  centarDTO = new Fitness_centarDTO(
+							centar.getId(), centar.getNaziv(), centar.getAdresa(),
+							centar.getBroj_telefona(), centar.getEmail());
+					
+					return new ResponseEntity<>(centarDTO, HttpStatus.OK);
+				
+			}else {
+				
+				Fitness_centar centar = this.fitness_centarService.izmeniemail(id, zamena);
+				
+				Fitness_centarDTO  centarDTO = new Fitness_centarDTO(
+						centar.getId(), centar.getNaziv(), centar.getAdresa(),
+						centar.getBroj_telefona(), centar.getEmail());
+				
+				return new ResponseEntity<>(centarDTO, HttpStatus.OK);
+			}
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

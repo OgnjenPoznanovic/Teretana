@@ -60,8 +60,57 @@ $(document).on("submit", "#pretraga", function (event) {     // kada je submit-o
                 $('#rez').append(row);                       
             }
 			
-			let employeeDiv = $("#sakri");                // dobavljamo element čiji je id = oneEmployee
-            employeeDiv.show();  
+			let employeeDiv1 = $("#sakri");                // dobavljamo element čiji je id = oneEmployee
+            employeeDiv1.show();  
+        },
+        error: function () {                                        // ova f-ja se izvršava posle neuspešnog zahteva
+            alert("Greška!");
+        }
+    });
+});
+
+
+$(document).on("submit", "#vpretraga", function (event) {     // kada je submit-ovana forma za kreiranje novog zaposlenog
+    event.preventDefault();
+	
+	console.log("Aloooo");
+	let employeesDiv = $("#tablediv");                      // dobavljamo element čiji je id = allEmployees  (pogledati html)
+    employeesDiv.hide();
+	let employeesDiv2 = $("#sakri");                      // dobavljamo element čiji je id = allEmployees  (pogledati html)
+    employeesDiv2.hide();
+
+	var naziv = document.getElementById("naziv").value;
+	var tip = document.getElementById("tip").value;
+	var trajanje = document.getElementById("trajanje").value;
+	
+	var fullURL = "http://localhost:8080/trening/vpretraga/" + naziv + "/" + tip +"/" + trajanje; 
+	
+	//console.log(fullURL);
+	
+	
+    // ajax poziv za kreiranje novog zaposlenog na backend-u
+    $.ajax({
+        type: "GET",                                               // HTTP metoda je POST
+        url: "http://localhost:8080/trening/vpretraga/" + naziv + "/" + tip +"/" + trajanje,
+        dataType: "json",                                           // tip povratne vrednosti
+        contentType: "application/json",                            // tip podataka koje šaljemo                 
+        success: function (response) {                              // ova f-ja se izvršava posle uspešnog zahteva
+            console.log(response);        
+
+			
+			for (let trening of response) {                        // prolazimo kroz listu svih zaposlenih
+                let row = "<tr>";                                   // kreiramo red za tabelu
+				row += "<td>" + trening.id + "</td>";       // ubacujemo podatke jednog zaposlenog u polja
+                row += "<td>" + trening.naziv + "</td>";
+                row += "<td>" + trening.tip + "</td>";
+				row += "<td>" + trening.trajanje + "</td>";                              
+                row += "</tr>";                                     
+
+                $('#vrez').append(row);                       
+            }
+			
+			let employeeDiv1 = $("#treca");                // dobavljamo element čiji je id = oneEmployee
+            employeeDiv1.show();  
         },
         error: function () {                                        // ova f-ja se izvršava posle neuspešnog zahteva
             alert("Greška!");

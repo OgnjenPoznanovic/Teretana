@@ -34,6 +34,54 @@ public class Fitness_centarService {
 		this.fitness_centarRepository.deleteById(id);
 	}
 	
+	public Fitness_centar izmeninaziv(Long id, String zamena) throws Exception{
+		Fitness_centar centar = this.fitness_centarRepository.getOne(id);
+		if(centar == null) {
+			throw new Exception("Ne postoji taj centar");
+		}
+		
+		centar.setNaziv(zamena);
+		
+		Fitness_centar izmenjen = this.fitness_centarRepository.save(centar);
+		return izmenjen;
+	}
+	
+	public Fitness_centar izmeniadresa(Long id, String zamena) throws Exception{
+		Fitness_centar centar = this.fitness_centarRepository.getOne(id);
+		if(centar == null) {
+			throw new Exception("Ne postoji taj centar");
+		}
+		
+		centar.setAdresa(zamena);
+		
+		Fitness_centar izmenjen = this.fitness_centarRepository.save(centar);
+		return izmenjen;
+	}
+	
+	public Fitness_centar izmenibroj(Long id, String zamena) throws Exception{
+		Fitness_centar centar = this.fitness_centarRepository.getOne(id);
+		if(centar == null) {
+			throw new Exception("Ne postoji taj centar");
+		}
+		
+		centar.setBroj_telefona(zamena);
+		
+		Fitness_centar izmenjen = this.fitness_centarRepository.save(centar);
+		return izmenjen;
+	}
+	
+	public Fitness_centar izmeniemail(Long id, String zamena) throws Exception{
+		Fitness_centar centar = this.fitness_centarRepository.getOne(id);
+		if(centar == null) {
+			throw new Exception("Ne postoji taj centar");
+		}
+		
+		centar.setEmail(zamena);
+		
+		Fitness_centar izmenjen = this.fitness_centarRepository.save(centar);
+		return izmenjen;
+	}
+	
 	
 	
 }
