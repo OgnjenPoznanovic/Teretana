@@ -61,6 +61,13 @@ public class TreningService {
 		return treningPoTipAndTrajanje;
 	}
 	
+	public Trening pronadji(Long id)throws Exception{
+		Trening tr = this.treningRepository.getOne(id);
+		if(tr == null) {
+			throw new Exception("Ne postoji taj trening");
+		}
+		return tr;
+	}
 
 	
 	

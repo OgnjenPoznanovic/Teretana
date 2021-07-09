@@ -100,6 +100,31 @@ public class Termin {
 	public void setTrening(Trening trening) {
 		this.trening = trening;
 	}
+
+	public Set<Ocena> getOcenjeno() {
+		return ocenjeno;
+	}
+
+	public void setOcenjeno(Set<Ocena> ocenjeno) {
+		this.ocenjeno = ocenjeno;
+	}
+
+	public Set<Clan> getUradio() {
+		return uradio;
+	}
+
+	public void setUradio(Set<Clan> uradio) {
+		this.uradio = uradio;
+	}
+
+	public Set<Clan> getTermini() {
+		return termini;
+	}
+
+	public void setTermini(Set<Clan> termini) {
+		this.termini = termini;
+	}
+	
 	
 	
 }

@@ -1,6 +1,7 @@
 $(document).on("submit", "#prijava", function (event) {    
      event.preventDefault();
 	 
+	 localStorage.clear();
 	 
 	let korisnicko_ime = $("#korisnicko_ime").val();
     let lozinka = $("#lozinka").val();
@@ -35,4 +36,5 @@ $(document).on("submit", "#prijava", function (event) {
         }
     });
 });
+
 

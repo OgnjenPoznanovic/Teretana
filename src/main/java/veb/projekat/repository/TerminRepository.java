@@ -23,4 +23,5 @@ public interface TerminRepository extends JpaRepository<Termin, Long>{
 	
 	@Query(value = "SELECT * FROM termin t WHERE t.vreme =?1 AND t.cena = ?2", nativeQuery = true)
 	public List<Termin> findByVremeAndCena(String vreme, double cena);
+	
 }

@@ -68,7 +68,6 @@ public class TrenerController {
 		return new ResponseEntity<>(treneriDTOS, HttpStatus.OK);
 	}
 	
-	
 	@PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE,
 			produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<TrenerDTO> dozvoli(@PathVariable Long id) throws Exception{

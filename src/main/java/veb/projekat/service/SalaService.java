@@ -73,5 +73,13 @@ public class SalaService {
 		return izmenjen;
 	}
 	
+	public Sala nadji(Long id)throws Exception {
+		Sala sala = this.salaRepository.getOne(id);
+		if(sala == null) {
+			throw new Exception("Ne postoji ta sala");
+		}
+		return sala;
+	}
+	
 	
 }

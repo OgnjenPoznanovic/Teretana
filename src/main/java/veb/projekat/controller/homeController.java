@@ -21,6 +21,11 @@ public class homeController{
 		return "ProfilTrener.html";
 	}
 	
+	@GetMapping("/det")
+	public String det() {
+		return "DetaljiTermina.html";
+	}
+	
 	
 	@GetMapping("/logout")
 	public String odjava() {

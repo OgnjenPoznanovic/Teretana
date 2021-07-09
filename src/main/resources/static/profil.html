@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
-    <title>Home Page</title>
+    <title>Pocetna</title>
     <meta charset="utf-8" />
 	
+	<link rel="stylesheet" href="admincss.css">
 	<script src="jquery.min.js"></script>
     <script src="jquery.validate.min.js"></script>
 	<script src="trening.js"></script>
@@ -35,21 +36,25 @@
 				</form> -->
 				
 				<br><br>
-				<h3>Visekriterijumska pretraga</h3>
+				<h2>Visekriterijumska pretraga</h2>
 				
 				<form id="vpretraga">
 				<label for="naziv">Naziv</label>
 				<input type="text" id="naziv" name="naziv" value="prazno">
+				<br>
 				<label for="tip">Tip</label>
 				<input type="text" id="tip" name="tip" value="prazno">
+				<br>
 				<label for="trajanje">Trajanje</label>
 				<input type="number" id="trajanje" name="trajanje" value="0">
-				
+				<br><br>
 				<input type="submit" value="Pretraga">
 				</form>
 				
-				<div id="tablediv">
-					<table id="lista_treninga">
+				<br><br>
+				
+				<div id="tablediv" >
+					<table class="t1"id="lista_treninga">
 					<tr>
 						<th>Id</th>
 						<th>Naziv</th>
@@ -60,8 +65,8 @@
 				</div>
 				
 				
-				<div id="sakri" hidden>
-					<table id="rez">
+				<div id="sakri" hidden >
+					<table class="t1" id="rez">
 					<tr>
 						<th>Id</th>
 						<th>Naziv</th>
@@ -72,7 +77,7 @@
 				</div>
 				
 				<div id="treca" hidden>
-					<table id="vrez">
+					<table class="t1" id="vrez">
 					<tr>
 						<th>Id</th>
 						<th>Naziv</th>
@@ -86,9 +91,16 @@
 				
 			</div>
 			
-			<a href="pregled_termina.html">Termini</a>
+			<br>
+			
+			<button onclick="document.location='pregled_termina.html'">Termini</button>
+			<!-- <a href="pregled_termina.html">Termini</a> -->
+			<br><br><br>
+			<button onclick="document.location='detalji_profila.html'">Profil</button>
+			<!-- <a href="detalji_profila.html">Profil</a> -->
 			<br><br><br><br><br><br><br>
-			<a href="Login.html">Odjava</a>
+			<button style="margin-left: 1800px;" onclick="document.location='Login.html'">Odjava</button>
+			<!-- <a href="Login.html" style="margin-left: 1800px;">Odjava</a> -->
 
 </body>
 

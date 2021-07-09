@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	
+	<link rel="stylesheet" href="admincss.css">
 	<script src="jquery.min.js"></script>
     <script src="jquery.validate.min.js"></script>
 	<script src="termin-trener.js"></script>
@@ -10,8 +10,10 @@
 	<title>Trener</title>
 </head>
 <body>
-
-	<h1>Dodavanje novog termina</h1>
+	
+	<h1>Trener</h1>
+	<br>
+	<h2>Dodavanje novog termina</h2>
     <form id="dodajnovitermin">
         <p>
             <label for="vreme">Vreme:</label>
@@ -25,9 +27,56 @@
             <label for="prijavljenih">Prijavljenih:</label>
             <input id="prijavljenih" type="number" required><br>
         </p>
+		<p>
+            <label for="sala">Sala id:</label>
+            <input id="sala" type="number" required><br>
+        </p>
+		<p>
+            <label for="trening">Trening id:</label>
+            <input id="trening" type="number" required><br>
+        </p>
         <input type="submit" value="Dodaj">
     </form>
+	
+	<br><br>
 
+	<h2>Izmena termina</h2>
+	
+	<br>
+	
+	<form id="gde">
+        <p>
+            <label for="vreme">Vreme:</label>
+            <input id="kad" type="text" required >
+        </p>
+		<p>
+            <label for="cena">Cena:</label>
+            <input id="pare" type="number" required >
+        </p>
+		<p>
+            <label for="sala">Sala id:</label>
+            <input id="gdes" type="number" required >
+        </p>
+		<p>
+            <label for="id">Termin id:</label>
+            <input id="id" type="number" required >
+        </p>
+		<br>
+		
+        <input type="submit" value="Izmeni">
+    </form>
+	
+	<br><br>
+	<div id="druga">
+			<table class="t1"id="termini">
+                <tr>
+                    <th>Id</th>
+                    <th>Vreme</th>
+                    <th>Cena</th>
+                    <th>Prijavljeni</th>
+                </tr>                
+            </table>
+			</div>
 
 </body>
 </html>

@@ -25,6 +25,14 @@ public class ClanService {
 		
 	}
 	
+	public Clan nadji(Long id)throws Exception{
+		Clan clan = this.clanRepository.getOne(id);
+		if(clan == null) {
+			throw new Exception("Ovaj mejl se vec koristi");
+		}
+		return clan;
+	}
+	
 	/*
 	public Clan create(Clan clan)throws Exception{
 		

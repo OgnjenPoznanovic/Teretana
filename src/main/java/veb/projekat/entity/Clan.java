@@ -158,6 +158,32 @@ public class Clan{
 		this.aktivan = aktivan;
 	}
 
+	public Set<Ocena> getOcenee() {
+		return ocenee;
+	}
+
+	public void setOcenee(Set<Ocena> ocenee) {
+		this.ocenee = ocenee;
+	}
+
+	public Set<Termin> getRezervisano() {
+		return rezervisano;
+	}
+
+	public void setRezervisano(Set<Termin> rezervisano) {
+		this.rezervisano = rezervisano;
+	}
+
+	public Set<Termin> getClanovi() {
+		return clanovi;
+	}
+
+	public void setClanovi(Set<Termin> clanovi) {
+		this.clanovi = clanovi;
+	}
+	
+	
+
 	
 	
 	

@@ -1,6 +1,15 @@
 
+a{
+	padding: 5px;
+	border: 1px solid #black;
+}
+
 a:link {
   color: red;
+}
+
+h1{
+	text-align: center;
 }
 
 
@@ -35,7 +44,7 @@ a:active {
 }
 
 body {
-  background-color: #d9d9d9;
+  background-color: #80bfff;
 }
 
 
@@ -54,3 +63,11 @@ td, th {
 }
 
 .t1 tr:first-child { background-color : #99e6ff }
+
+form{
+  width: 10%;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+	
+}

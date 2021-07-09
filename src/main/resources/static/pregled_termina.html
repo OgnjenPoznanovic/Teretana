@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    <title>Home Page</title>
+    <title>Termini</title>
     <meta charset="utf-8" />
-	
+	<link rel="stylesheet" href="admincss.css"> 
 	<script src="jquery.min.js"></script>
     <script src="jquery.validate.min.js"></script>
 	<script src="termin.js"></script>
@@ -26,34 +26,37 @@
 					<option value="vremer">vreme rastuca</option>
 					<option value="vremeo">vreme opadajuca</option>
 				</select>
-				<br>
+				<br><br>
 				<input type="submit" value="Sortiraj">
 			</form>
-			
+			<br><br><br>
 			<form id="tpretraga">
 				<label for="vreme">Vreme</label>
 				<input type="text" id="vreme" name="vreme" value="prazno">
 				<label for="cena">Cena</label>
 				<input type="number" id="cena" name="cena" value="0">
-				
+				<br><br>
 				<input type="submit" value="Pretraga">
 				</form>
+				
+				<br><br><br>
 			
 			<div id="prva">
-            <table id="termini">
+            <table class="t1" id="termini">
 			<thead>
                 <tr>
                     <th>Id</th>
                     <th>Vreme</th>
                     <th>Cena</th>
                     <th>Prijavljeni</th>
+					<th>Detalji</th>
                 </tr>
 			</thead>
             </table>
 			</div>
 			
 			<div id="druga" hidden>
-			<table id="tabelasort">
+			<table class="t1" id="tabelasort">
                 <tr>
                     <th>Id</th>
                     <th>Vreme</th>
@@ -63,11 +66,24 @@
             </table>
 			</div>
 			
-			
-			
+			<div id="treca" hidden>
+			<table class="t1" id="detalji">
+                <tr>
+                    <th>Id</th>
+                    <th>Vreme</th>
+                    <th>Cena</th>
+                    <th>Prijavljeni</th>
+					<th>Zakazi</th>
+					<th>Otkazi</th>
+                </tr>                
+            </table>
+			</div>
 			
 			
         </div>
+		<br><br>
+		<button onclick="document.location='profil.html'">Pocetna</button>
+		
 
 </body>
 
